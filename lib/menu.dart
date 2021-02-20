@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'src/000/index.dart' as s000;
 import 'src/001/index.dart' as s001;
+import 'src/002/index.dart' as s002;
 
 /// メニュー
 class Menu extends StatelessWidget {
   final List<ListItem> items = [
     ListItem(s000.Index.title, (_) => s000.Index()),
     ListItem(s001.Index.title, (_) => s001.Index()),
+    ListItem(s002.Index.title, (_) => s002.Index()),
   ];
 
   @override

@@ -19,12 +19,7 @@ class Index extends StatelessWidget {
           title: Text(title),
         ),
         // プロバイダの定義
-        body: MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (_) => Bloc()),
-          ],
-          child: List(),
-        ),
+        body: List(),
       ),
     );
   }
@@ -69,7 +64,8 @@ class SampleCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
         child: ListTile(
           leading: Image(
-            image: AssetImage('assets/images/wikipedia-logo.png'),
+            width: 40,
+            image: AssetImage('assets/images/wikipedia.png'),
           ),
           title: Text(title, overflow: TextOverflow.ellipsis,),
         ),
