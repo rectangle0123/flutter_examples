@@ -3,12 +3,13 @@ import 'package:provider/provider.dart';
 
 import 'bloc.dart';
 
-/// Index.
+/// Index
+///
 /// 使用パッケージ
 /// - http
 /// - provider
 class Index extends StatelessWidget {
-  /// タイトル
+  // タイトル
   static const title = 'API, BLoC, ListView';
 
   @override
@@ -53,7 +54,6 @@ class SampleCard extends StatelessWidget {
   // タイトル
   final String title;
 
-  /// コンストラクタ
   SampleCard(this.title);
 
   @override

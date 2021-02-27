@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'database.dart';
+import 'sqlite_handler.dart';
 
 /// BLoC
 class Bloc extends ChangeNotifier {
@@ -8,19 +8,26 @@ class Bloc extends ChangeNotifier {
   Map<String, dynamic> props = {};
 
   // プロパティの初期化
-  void setup() {
-    Database().queryAll('props').then((value) {
-      props = value;
-      // プロパティの更新を通知する
-      notifyListeners();
-    });
+  Future<void> init() async {
+    // DBからプロパティを取得する
+    List<Map<String, dynamic>> result = await SqliteHandler().queryAll('props');
+    result.forEach((e) => props[e['key']] = e['value']);
+    // 更新を通知する
+    notifyListeners();
   }
 
-  // データベースの更新
-  void update(String key, dynamic value) {
-    Database().update('props', {'key': key, 'value': value}).then((value) {
-      // プロパティを初期化する
-      setup();
-    });
+  // プロパティの更新
+  Future<void> update(String key, dynamic value) async {
+    // プロパティを更新する
+    props[key] = value;
+    // 更新を通知する
+    notifyListeners();
+    // DBを更新する
+    await SqliteHandler().update('props', {'key': key, 'value': value});
+  }
+
+  int get fruit {
+    if (props.isEmpty) return null;
+    return props['fruit'];
   }
 }

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'bloc.dart';
-import 'database.dart';
 
 /// Index
+///
 /// 使用パッケージ
 /// - sqflite
 /// - path
@@ -37,30 +37,34 @@ class Index extends StatelessWidget {
   }
 }
 
-// ドロップダウンメニュー
+/// ドロップダウンメニュー
 class SampleDropDown extends StatelessWidget {
   // アイテムリスト
   final Map<int, String> _list = {
-    0: 'None', 1: 'Apple', 2: 'Orange', 3: 'Banana',};
+    0: 'None', 1: 'Apple', 2: 'Orange', 3: 'Banana',
+  };
 
   @override
   Widget build(BuildContext context) {
-    // プロパティを初期化する
-    context.read<Bloc>().setup();
-    // ドロップダウンリスト
-    return DropdownButton<int>(
-      value: context.watch<Bloc>().props['fruit'],
-      icon: Icon(Icons.keyboard_arrow_down),
-      underline: Container(height: 2, color: Colors.lightBlue),
-      onChanged: (value) {
-        context.read<Bloc>().update('fruit', value);
-      },
-      items: _list.entries.map((e) {
-        return DropdownMenuItem(
-          value: e.key,
-          child: Text(e.value),
+    // プロパティを監視する
+    return Consumer<Bloc>(
+      builder: (context, bloc, child) {
+        // プロパティを初期化する
+        bloc.init();
+        // ドロップダウンリストを作成する
+        return DropdownButton<int>(
+          value: bloc.fruit,
+          icon: Icon(Icons.keyboard_arrow_down),
+          underline: Container(height: 2, color: Colors.lightBlue),
+          onChanged: (value) => bloc.update('fruit', value),
+          items: _list.entries.map((e) {
+            return DropdownMenuItem(
+              value: e.key,
+              child: Text(e.value),
+            );
+          }).toList(),
         );
-      }).toList(),
+      },
     );
   }
 }

@@ -5,7 +5,6 @@ import 'home.dart';
 import 'src/001/bloc.dart' as s001;
 import 'src/002/bloc.dart' as s002;
 
-/// main
 void main() => runApp(App());
 
 /// App

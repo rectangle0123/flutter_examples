@@ -13,7 +13,7 @@ class Bloc extends ChangeNotifier {
     // アイテムリストをAPIから取得する
     Api().request().then((value) {
       items = value;
-      // アイテムリストの変更を通知する
+      // 変更を通知する
       notifyListeners();
     });
   }

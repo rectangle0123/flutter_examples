@@ -22,7 +22,8 @@ class Menu extends StatelessWidget {
             title: Text('${items[index].title}'),
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: items[index].func));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: items[index].func));
             },
           );
         }),
