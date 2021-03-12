@@ -22,6 +22,10 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is required.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,5 +45,8 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<!-- 環境構築（開発・本番） -->
+	<key>GoogleMapsAPIKey</key>
+	<string></string>
 </dict>
 </plist>

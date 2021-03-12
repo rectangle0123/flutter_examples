@@ -32,6 +32,12 @@ dependencies:
   sqflite: ^1.3.2+3
   # path
   path: ^1.7.0
+  # Google Maps for Flutter
+  google_maps_flutter: ^1.2.0
+  # Flutter Location Plugin
+  location: ^3.2.4
+  # circular_menu
+  circular_menu : ^1.1.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -84,3 +90,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: NotoSansJP
+      fonts:
+        - asset: assets/fonts/NotoSansJP-Regular.otf
+        - asset: assets/fonts/NotoSansJP-Bold.otf
+          weight: 700
+    - family: NotoSerifJP
+      fonts:
+        - asset: assets/fonts/NotoSerifJP-Regular.otf
+        - asset: assets/fonts/NotoSerifJP-Bold.otf
+          weight: 700
+

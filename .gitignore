@@ -39,3 +39,6 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+# 環境構築（開発・本番）
+.env
