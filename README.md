@@ -4,7 +4,7 @@ Flutterの実装方法を検証するアプリです。
 
 ## インストール
 
-Google Maps for Flutter](https://pub.dev/packages/google_maps_flutter)パッケージを使用します。
+[Google Maps for Flutter](https://pub.dev/packages/google_maps_flutter)パッケージを使用します。<br/>
 Google Cloud PlarformのAPIキーを.envに書いてプロジェクトルートに置いてください。
 
 ```
