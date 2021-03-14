@@ -9,12 +9,10 @@ class Bloc extends ChangeNotifier {
   List<Item> items = [];
 
   // アイテムリストの更新
-  void update() {
+  Future<void> update() async {
     // アイテムリストをAPIから取得する
-    Api().request().then((value) {
-      items = value;
-      // 変更を通知する
-      notifyListeners();
-    });
-  }
+    items = await Api().request();
+    // 変更を通知する
+    notifyListeners();
+ }
 }

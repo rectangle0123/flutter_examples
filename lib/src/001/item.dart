@@ -7,6 +7,7 @@ class Item {
 
   Item(this.id, this.title);
 
+  /// ファクトリコンストラクタ
   factory Item.fromJson(Map<String, dynamic> json) {
     return Item(json['id'], json['title']);
   }

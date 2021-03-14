@@ -10,14 +10,13 @@ class Api {
   static const url = 'https://ja.wikipedia.org/w/api.php?'
       'format=json&action=query&list=random&rnnamespace=0&rnlimit=10';
 
-  // インスタンス
   static final Api _instance = Api._();
 
   Api._();
 
   factory Api() => _instance;
 
-  // リクエスト
+  /// リクエスト
   Future<List<Item>> request() async {
     http.Response response = await http.get(url);
     var parsed = json.decode(response.body);

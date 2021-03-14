@@ -19,7 +19,6 @@ class Index extends StatelessWidget {
         appBar: AppBar(
           title: Text(title),
         ),
-        // プロバイダの定義
         body: List(),
       ),
     );
@@ -36,7 +35,7 @@ class List extends StatelessWidget {
     return Consumer<Bloc>(
       builder: (context, bloc, child) {
         return RefreshIndicator(
-          onRefresh: () async => context.read<Bloc>().update(),
+          onRefresh: () async => bloc.update(),
           child: ListView.builder(
             itemCount: bloc.items.length,
             itemBuilder: (context, index) {
