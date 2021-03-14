@@ -1,16 +1,21 @@
 # flutter_examples
 
-A new Flutter application.
+Flutterの実装方法を検証するアプリです。
 
-## Getting Started
+## インストール
 
-This project is a starting point for a Flutter application.
+[Google Maps for Flutter](https://pub.dev/packages/google_maps_flutter)パッケージを使用します。<br/>
+Google Cloud PlarformのAPIキーを.envに書いてプロジェクトルートに置いてください。
 
-A few resources to get you started if this is your first Flutter project:
+```
+GMAPS_API_KEY=APIキー
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## アプリ内容
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+以下のようなことを試しています。
+
+- APIから取得した情報でListViewを作成する
+- DBと連携するドロップダウンリストを作成する
+- 現在地を取得してGoogleマップを表示する
+- デザインの実験室
