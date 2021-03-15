@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
 import 'src/000/index.dart' as s000;
-import 'src/001/index.dart' as s001;
 import 'src/002/index.dart' as s002;
 import 'src/003/index.dart' as s003;
+import 'src/004/index.dart' as s004;
 import 'src/005/index.dart' as s005;
+import 'src/006/index.dart' as s006;
 
 /// メニュー
 class Menu extends StatelessWidget {
   // アイテム
   final List<ListItem> _items = [
     ListItem(s000.Index.title, (_) => s000.Index()),
-    ListItem(s001.Index.title, (_) => s001.Index()),
     ListItem(s002.Index.title, (_) => s002.Index()),
     ListItem(s003.Index.title, (_) => s003.Index()),
+    ListItem(s004.Index.title, (_) => s004.Index()),
     ListItem(s005.Index.title, (_) => s005.Index()),
+    ListItem(s006.Index.title, (_) => s006.Index()),
   ];
 
   @override
