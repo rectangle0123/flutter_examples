@@ -6,13 +6,12 @@ import 'bloc.dart';
 /// Index
 ///
 /// 使用パッケージ
-/// - sqflite
-/// - path
+/// - http
 /// - provider
 class Index extends StatelessWidget {
   // タイトル
-  static const title = 'DB, BLoC, Dropdown';
-  
+  static const title = 'API, BLoC, ListView';
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -20,51 +19,56 @@ class Index extends StatelessWidget {
         appBar: AppBar(
           title: Text(title),
         ),
-        // プロバイダの定義
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text('Your favorite fruit?',
-                style: TextStyle(fontSize: 18),
-              ),
-              SampleDropDown(),
-            ],
-          ),
-        ),
+        body: List(),
       ),
     );
   }
 }
 
-/// ドロップダウンメニュー
-class SampleDropDown extends StatelessWidget {
-  // アイテムリスト
-  final Map<int, String> _list = {
-    0: 'None', 1: 'Apple', 2: 'Orange', 3: 'Banana',
-  };
+/// リスト
+class List extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // BLoCを更新する
+    context.read<Bloc>().update();
+    // BLoCからリストを描画する
+    return Consumer<Bloc>(
+      builder: (context, bloc, child) {
+        return RefreshIndicator(
+          onRefresh: () async => bloc.update(),
+          child: ListView.builder(
+            itemCount: bloc.items.length,
+            itemBuilder: (context, index) {
+              return SampleCard(bloc.items[index].title);
+            },
+          ),
+        );
+      },
+    );
+  }
+}
+
+/// カード
+class SampleCard extends StatelessWidget {
+  // タイトル
+  final String title;
+
+  SampleCard(this.title);
 
   @override
   Widget build(BuildContext context) {
-    // プロパティを監視する
-    return Consumer<Bloc>(
-      builder: (context, bloc, child) {
-        // プロパティを初期化する
-        bloc.init();
-        // ドロップダウンリストを作成する
-        return DropdownButton<int>(
-          value: bloc.fruit,
-          icon: Icon(Icons.keyboard_arrow_down),
-          underline: Container(height: 2, color: Colors.lightBlue),
-          onChanged: (value) => bloc.update('fruit', value),
-          items: _list.entries.map((e) {
-            return DropdownMenuItem(
-              value: e.key,
-              child: Text(e.value),
-            );
-          }).toList(),
-        );
-      },
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+        child: ListTile(
+          leading: Image(
+            width: 40,
+            image: AssetImage('assets/images/wikipedia.png'),
+          ),
+          title: Text(title, overflow: TextOverflow.ellipsis,),
+        ),
+      ),
     );
   }
 }
