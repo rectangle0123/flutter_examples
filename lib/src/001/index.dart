@@ -4,8 +4,13 @@ import 'package:circular_menu/circular_menu.dart';
 import 'package:flutter/material.dart';
 
 /// Index
+///
+/// 使用パッケージ
+/// - circular_menu
 class Index extends StatelessWidget {
-  static const title = 'Design';
+  /// タイトル
+  static const title = 'デザイン';
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -88,6 +93,7 @@ class CustomCircularMenu extends StatelessWidget {
   }
 }
 
+/// ボタンシャドウ
 class CustomBoxShadow extends BoxShadow {
   CustomBoxShadow() : super(
     color: Colors.black45,

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 /// Index
 class Index extends StatelessWidget {
-  static const title = 'Template';
+  /// タイトル
+  static const title = 'テンプレート';
 
   @override
   Widget build(BuildContext context) {

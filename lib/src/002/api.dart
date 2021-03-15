@@ -17,10 +17,13 @@ class Api {
     'rnlimit': '10',
   };
 
+  /// インスタンス
   static final Api _instance = Api._();
 
+  /// コンストラクタ
   Api._();
 
+  /// ファクトリコンストラクタ
   factory Api() => _instance;
 
   /// リクエスト

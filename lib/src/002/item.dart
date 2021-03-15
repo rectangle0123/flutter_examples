@@ -1,10 +1,11 @@
 /// アイテム
 class Item {
-  // ID
+  /// ID
   final int id;
-  // タイトル
+  /// タイトル
   final String title;
 
+  /// コンストラクタ
   Item(this.id, this.title);
 
   /// ファクトリコンストラクタ

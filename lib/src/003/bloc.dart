@@ -4,10 +4,10 @@ import 'sqlite_handler.dart';
 
 /// BLoC
 class Bloc extends ChangeNotifier {
-  // プロパティ
+  /// プロパティ
   Map<String, dynamic> props = {};
 
-  // プロパティの初期化
+  /// プロパティの初期化
   Future<void> init() async {
     // DBからプロパティを取得する
     List<Map<String, dynamic>> result = await SqliteHandler().queryAll('props');
@@ -16,7 +16,7 @@ class Bloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  // プロパティの更新
+  /// プロパティの更新
   Future<void> update(String key, dynamic value) async {
     // プロパティを更新する
     props[key] = value;
@@ -26,6 +26,7 @@ class Bloc extends ChangeNotifier {
     await SqliteHandler().update('props', {'key': key, 'value': value});
   }
 
+  /// フルーツ取得
   int get fruit {
     if (props.isEmpty) return null;
     return props['fruit'];

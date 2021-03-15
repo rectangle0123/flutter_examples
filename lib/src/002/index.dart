@@ -9,8 +9,8 @@ import 'bloc.dart';
 /// - http
 /// - provider
 class Index extends StatelessWidget {
-  // タイトル
-  static const title = 'API, BLoC, ListView';
+  /// タイトル
+  static const title = 'APIからリスト（BLoC）';
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,6 @@ class List extends StatelessWidget {
 
 /// カード
 class SampleCard extends StatelessWidget {
-  // タイトル
   final String title;
 
   SampleCard(this.title);

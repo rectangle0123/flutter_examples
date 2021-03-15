@@ -11,7 +11,7 @@ import 'bloc.dart';
 /// - provider
 class Index extends StatelessWidget {
   // タイトル
-  static const title = 'DB, BLoC, Dropdown';
+  static const title = 'Sqfliteの取得と更新';
   
   @override
   Widget build(BuildContext context) {

@@ -8,7 +8,8 @@ import 'src/005/index.dart' as s005;
 
 /// メニュー
 class Menu extends StatelessWidget {
-  final List<ListItem> items = [
+  // アイテム
+  final List<ListItem> _items = [
     ListItem(s000.Index.title, (_) => s000.Index()),
     ListItem(s001.Index.title, (_) => s001.Index()),
     ListItem(s002.Index.title, (_) => s002.Index()),
@@ -20,14 +21,14 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        children: List.generate(items.length, (index) {
+        children: List.generate(_items.length, (index) {
           return ListTile(
             leading: FlutterLogo(),
-            title: Text('${items[index].title}'),
+            title: Text('${_items[index].title}'),
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: items[index].func));
+                  MaterialPageRoute(builder: _items[index].func));
             },
           );
         }),

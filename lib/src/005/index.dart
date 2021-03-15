@@ -11,7 +11,7 @@ import 'package:location/location.dart';
 /// - location
 class Index extends StatelessWidget {
   // タイトル
-  static const title = 'Google Maps & Location';
+  static const title = 'Googleマップと現在位置';
 
   @override
   Widget build(BuildContext context) {

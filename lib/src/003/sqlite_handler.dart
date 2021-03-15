@@ -5,15 +5,18 @@ import 'package:sqflite/sqflite.dart';
 
 /// データベース（シングルトン）
 class SqliteHandler {
-  // インスタンス
+  /// インスタンス
   static final SqliteHandler _instance = SqliteHandler._();
   // DB
   Database _database;
 
+  /// コンストラクタ
   SqliteHandler._();
 
+  /// ファクトリコンストラクタ
   factory SqliteHandler() => _instance;
 
+  /// DB取得
   get database async {
     if (_database != null) return _database;
     _database = await _open();
