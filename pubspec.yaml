@@ -23,7 +23,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
+  # intl
+  intl: ^0.17.0
   # http
   http: ^0.13.0
   # provider
@@ -61,6 +65,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  # ファイルの自動生成
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -103,4 +110,3 @@ flutter:
         - asset: assets/fonts/NotoSerifJP-Regular.otf
         - asset: assets/fonts/NotoSerifJP-Bold.otf
           weight: 700
-

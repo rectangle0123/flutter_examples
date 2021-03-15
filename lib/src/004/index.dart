@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Index
 class Index extends StatelessWidget {
   /// タイトル
-  static const title = 'SharedPreferencesを使う';
+  static const title = 'ネイティブDBを使う';
 
   @override
   Widget build(BuildContext context) {
