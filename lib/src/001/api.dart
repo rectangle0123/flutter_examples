@@ -7,8 +7,15 @@ import 'item.dart';
 /// API（シングルトン）
 class Api {
   // Wikipediaの記事を10件ランダムに取得するAPI
-  static const url = 'https://ja.wikipedia.org/w/api.php?'
-      'format=json&action=query&list=random&rnnamespace=0&rnlimit=10';
+  static const domain = 'ja.wikipedia.org';
+  static const path = '/w/api.php';
+  static const params = {
+    'format': 'json',
+    'action': 'query',
+    'list': 'random',
+    'rnnamespace': '0',
+    'rnlimit': '10',
+  };
 
   static final Api _instance = Api._();
 
@@ -18,6 +25,7 @@ class Api {
 
   /// リクエスト
   Future<List<Item>> request() async {
+    var url = Uri.https(domain, path, params);
     http.Response response = await http.get(url);
     var parsed = json.decode(response.body);
     var data = parsed['query']['random'] as List<dynamic>;
